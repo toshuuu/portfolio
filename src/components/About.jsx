@@ -31,7 +31,7 @@ const About = () => {
           className="text-2xl md:text-4xl font-light leading-snug tracking-tight text-light-text dark:text-dark-text mt-10 max-w-3xl"
         >
           CS student, builder, and chronic problem-solver —
-          <span className="text-light-textMuted dark:text-dark-textMuted"> currently turning caffeine into code and DSA reps into (hopefully) a cracked engineer.</span>
+          <span className="text-light-textMuted dark:text-dark-textMuted"> currently turning caffeine into code.</span>
         </motion.p>
 
         {/* Easter-egg snippet */}
@@ -50,7 +50,7 @@ const About = () => {
         >
           I study Computer Science Engineering and spend most of my time grinding DSA,
           building full-stack projects, and exploring how AI fits into the things I make.
-          Outside of that I'm deep into system design, backend architecture, and contributing
+          Outside of that I'm trying to contribute
           to open source whenever I can find the time.
         </motion.p>
 
