@@ -8,7 +8,7 @@ export const portfolioData = {
   },
   links: {
     github: "https://github.com/toshuuu ",
-    linkedin: "www.linkedin.com/in/toshal-kirange",
+    linkedin: "https://www.linkedin.com/in/toshal-kirange",
     email: "mailto:toshalkirange8@gmail.com"
   },
   info: {
