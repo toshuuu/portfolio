@@ -95,12 +95,16 @@ const ProjectCard = ({ project }) => {
         <a
           href={project.github}
           className="text-sm font-medium flex items-center gap-1 hover:text-light-textMuted dark:hover:text-dark-textMuted transition-colors cursor-none"
+              target="_blank"
+              rel="noopener noreferrer"
         >
           GitHub <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
         </a>
         <a
           href={project.demo}
           className="text-sm font-medium flex items-center gap-1 hover:text-light-textMuted dark:hover:text-dark-textMuted transition-colors cursor-none"
+              target="_blank"
+              rel="noopener noreferrer"
         >
           Live Demo <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
         </a>

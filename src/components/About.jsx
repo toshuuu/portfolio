@@ -4,29 +4,13 @@ import { portfolioData } from '../data/portfolioData';
 import CodeSnippet from './CodeSnippet';
 
 const About = () => {
-  const { person, info } = portfolioData;
+  const { person } = portfolioData;
   const shouldReduce = useReducedMotion();
 
-  const infoRows = [
-    { label: 'Education', value: info.education },
-    { label: 'Focus', value: info.focus },
-    { label: 'Interests', value: info.interests },
-    { label: 'Currently Learning', value: info.learning },
+  const tags = [
+    'C++', 'DSA', 'React', 'Node.js', 'MongoDB',
+    'Backend', 'Open Source', 'AI / ML',
   ];
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 20,
-        delay: i * 0.1,
-      },
-    }),
-  };
 
   return (
     <section id="about" className="section-container">
@@ -38,41 +22,62 @@ const About = () => {
       >
         <span className="section-label">About</span>
 
-        <div className="grid md:grid-cols-2 gap-16 mt-12">
-          <motion.div
-            initial={shouldReduce ? false : { opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
-          >
-            <p className="text-xl md:text-2xl leading-relaxed text-light-text dark:text-dark-text font-light">
-              &quot;{person.fullBio}&quot;
-            </p>
-            <CodeSnippet
-              code={`const me = {\n  learning: true,\n  sleep: false,\n};`}
-              className="mt-6"
-            />
-          </motion.div>
+        {/* Bio — large, light weight, full width */}
+        <motion.p
+          initial={shouldReduce ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
+          className="text-2xl md:text-4xl font-light leading-snug tracking-tight text-light-text dark:text-dark-text mt-10 max-w-3xl"
+        >
+          CS student, builder, and chronic problem-solver —
+          <span className="text-light-textMuted dark:text-dark-textMuted"> currently turning caffeine into code and DSA reps into (hopefully) a cracked engineer.</span>
+        </motion.p>
 
-          <div className="space-y-8">
-            {infoRows.map(({ label, value }, i) => (
-              <motion.div
-                key={label}
-                custom={i}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-40px' }}
-                className="border-t border-light-border dark:border-dark-border pt-4"
-              >
-                <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase text-light-textMuted dark:text-dark-textMuted mb-2">
-                  {label}
-                </h4>
-                <p className="text-sm">{value}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        {/* Easter-egg snippet */}
+        <CodeSnippet
+          code={`const me = {\n  learning: true,\n  sleep: false,\n};`}
+          className="mt-8"
+        />
+
+        {/* Natural-language paragraph */}
+        <motion.p
+          initial={shouldReduce ? false : { opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.2 }}
+          className="mt-10 text-base md:text-lg text-light-textMuted dark:text-dark-textMuted leading-relaxed max-w-2xl"
+        >
+          I study Computer Science Engineering and spend most of my time grinding DSA,
+          building full-stack projects, and exploring how AI fits into the things I make.
+          Outside of that I'm deep into system design, backend architecture, and contributing
+          to open source whenever I can find the time.
+        </motion.p>
+
+        {/* Tag strip — "currently into" */}
+        <motion.div
+          initial={shouldReduce ? false : { opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.3 }}
+          className="mt-10 flex flex-wrap gap-2"
+        >
+          <span className="text-[10px] font-semibold tracking-[0.18em] uppercase text-light-textMuted dark:text-dark-textMuted self-center mr-2">
+            Into
+          </span>
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-3 py-1 rounded-full border border-light-border dark:border-dark-border
+                text-xs text-light-textMuted dark:text-dark-textMuted
+                hover:border-light-text/40 dark:hover:border-dark-text/40
+                hover:text-light-text dark:hover:text-dark-text
+                transition-colors duration-200"
+            >
+              {tag}
+            </span>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   );

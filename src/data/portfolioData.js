@@ -3,12 +3,12 @@ export const portfolioData = {
     name: "Toshal Kirange",
     label: "Computer Science Student / Developer",
     shortBio: "Building software, solving problems, and learning in public.",
-    fullBio: "I'm a Computer Science Engineering student focused on building practical software and improving my problem-solving skills. I enjoy working with modern web technologies, exploring AI/ML, and solving challenging DSA problems.",
+    fullBio: "I'm a Computer Science Engineering student focused on building practical software and improving my problem-solving skills by solving challenging DSA problems.",
     status: "Currently building & learning"
   },
   links: {
     github: "https://github.com/toshuuu ",
-    linkedin: "",
+    linkedin: "www.linkedin.com/in/toshal-kirange",
     email: "mailto:toshalkirange8@gmail.com"
   },
   info: {
@@ -19,37 +19,37 @@ export const portfolioData = {
   },
   skills: [
     { category: "LANGUAGES", items: "C++ · JavaScript · Python" },
-    { category: "FRONTEND", items: "React · Vite · Tailwind CSS · HTML · CSS" },
+    { category: "FRONTEND", items: "React · Vite · HTML · CSS" },
     { category: "BACKEND", items: "Node.js · Express" },
-    { category: "DATABASE", items: "MongoDB . SQL" },
-    { category: "TOOLS", items: "Git · GitHub · Postman · Vercel . Npm" },
+    { category: "DATABASE", items: "MongoDB · SQL" },
+    { category: "TOOLS", items: "Git · GitHub · Postman · Vercel · Npm" },
     { category: "CS FUNDAMENTALS", items: "DSA · OOP · DBMS · Operating Systems · Computer Networks" }
   ],
   projects: [
     {
       id: "01",
       name: "Crisis Information Detection",
-      description: "A short description of the project and the problem it solves.",
-      tech: "React · Node.js · MongoDB",
-      github: "#",
-      demo: "#"
+      description: "A system for identifying and analyzing crisis-related information from online sources to help surface relevant incidents and information.",
+      tech: "React · Node.js · Express · MongoDB · SocketIO",
+      github: "https://github.com/toshuuu/crisis-information-detector",
+      demo: "https://crisis-misinformation-detector-hput9wc08.vercel.app/"
     },
     {
       id: "02",
-      name: "PROJECT NAME",
-      description: "Description",
-      tech: "React · Express · MongoDB",
+      name: "Document Forgery Detection",
+      description: "An OCR-based system that extracts text from document images, compares it with reference data, and identifies altered or mismatched content",
+      tech: "Python · OpenCV · React · Express · MongoDB",
       github: "#",
       demo: "#"
     },
-    {
-      id: "03",
-      name: "PROJECT NAME",
-      description: "Description",
-      tech: "Python · AI/ML",
-      github: "#",
-      demo: "#"
-    }
+    // {
+    //   id: "03",
+    //   name: "PROJECT NAME",
+    //   description: "Description",
+    //   tech: "Python · AI/ML",
+    //   github: "#",
+    //   demo: "#"
+    // }
   ],
   stats: {
     leetcode: {

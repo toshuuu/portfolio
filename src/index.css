@@ -38,11 +38,10 @@
   }
   
   .btn-primary {
-    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide bg-light-surface text-light-text shadow-neumorphic-light-rest 
-    hover:shadow-neumorphic-light-hover hover:-translate-y-[2px]
-    active:shadow-neumorphic-light-pressed active:translate-y-[1px]
-    dark:bg-dark-surface dark:text-dark-text dark:shadow-neumorphic-dark-rest
-    dark:hover:shadow-neumorphic-dark-hover
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide bg-transparent border border-light-border text-light-textMuted
+    hover:text-light-text hover:bg-light-surface hover:-translate-y-[2px] hover:shadow-neumorphic-light-rest
+    active:translate-y-[1px] active:shadow-neumorphic-light-pressed
+    dark:border-dark-border dark:text-dark-textMuted dark:hover:text-dark-text dark:hover:bg-dark-surface dark:hover:shadow-neumorphic-dark-rest
     dark:active:shadow-neumorphic-dark-pressed;
   }
   
