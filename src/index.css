@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-light-bg text-light-text font-sans antialiased transition-colors duration-300;
+    cursor: none;
+    /* Neumorphic pill shadow tokens — light mode defaults */
+    --neu-surface: #EBEBE6;
+    --shadow-dark: #d6d6d2;
+    --shadow-light: #ffffff;
+  }
+
+  .dark body {
+    @apply bg-dark-bg text-dark-text;
+    /* Dark mode overrides */
+    --neu-surface: #1E1E1E;
+    --shadow-dark: #0a0a0a;
+    --shadow-light: #1a1a1a;
+  }
+
+  /* Hide default cursor everywhere — replaced by CursorGlow */
+  * {
+    cursor: none !important;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-base {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide;
+  }
+  
+  .btn-primary {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide bg-light-surface text-light-text shadow-neumorphic-light-rest 
+    hover:shadow-neumorphic-light-hover hover:-translate-y-[2px]
+    active:shadow-neumorphic-light-pressed active:translate-y-[1px]
+    dark:bg-dark-surface dark:text-dark-text dark:shadow-neumorphic-dark-rest
+    dark:hover:shadow-neumorphic-dark-hover
+    dark:active:shadow-neumorphic-dark-pressed;
+  }
+  
+  .btn-secondary {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide bg-transparent border border-light-border text-light-textMuted
+    hover:text-light-text hover:bg-light-surface hover:-translate-y-[2px] hover:shadow-neumorphic-light-rest
+    active:translate-y-[1px] active:shadow-neumorphic-light-pressed
+    dark:border-dark-border dark:text-dark-textMuted dark:hover:text-dark-text dark:hover:bg-dark-surface dark:hover:shadow-neumorphic-dark-rest
+    dark:active:shadow-neumorphic-dark-pressed;
+  }
+
+  /* Cards */
+  .neumorphic-card {
+    @apply bg-light-surface shadow-neumorphic-light-rest rounded-xl p-8 transition-all duration-300 border border-transparent
+    hover:shadow-neumorphic-light-hover hover:-translate-y-[2px] hover:border-light-border/50
+    dark:bg-dark-surface dark:shadow-neumorphic-dark-rest
+    dark:hover:shadow-neumorphic-dark-hover dark:hover:border-dark-border/50;
+  }
+
+  /* Theme Switch */
+  .neumorphic-switch {
+    @apply w-12 h-6 rounded-full bg-light-surface shadow-neumorphic-light-pressed relative cursor-pointer
+    dark:bg-dark-surface dark:shadow-neumorphic-dark-pressed;
+  }
+  
+  .neumorphic-switch-thumb {
+    @apply w-4 h-4 rounded-full bg-light-text shadow-sm absolute top-1 left-1 transition-transform duration-300
+    dark:bg-dark-text;
+  }
+  
+  .dark .neumorphic-switch-thumb {
+    @apply translate-x-6;
+  }
+  
+  /* Sections */
+  .section-container {
+    @apply max-w-5xl mx-auto px-6 py-24;
+  }
+  
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.2em] text-light-textMuted dark:text-dark-textMuted uppercase mb-6 block;
+  }
+}
